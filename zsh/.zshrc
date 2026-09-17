@@ -18,6 +18,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light hlissner/zsh-autopair
 # zinit light Aloxaf/fzf-tab
 
 # Lines configured by zsh-newuser-install
@@ -53,6 +54,7 @@ alias ls='ls -l --color'
 # alias ls="exa -lh --group-directories-first --sort=modified --time=created --icons"
 alias shutdown='systemctl poweroff'
 alias reboot='systemctl reboot'
+alias vgit="git log --oneline --graph --all --decorate"
 
 # Japanese audio downloader
 dl() {
