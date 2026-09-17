@@ -1,0 +1,252 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 32,
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-bottom": 0,
+    "margin-right": 0,
+    "modules-left": [
+        "custom/seperator",
+        "hyprland/workspaces",
+        // "custom/seperator",
+        // "hyprland/window",
+        "mpris"
+        // "input-method"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+	"hyprland/window",
+        "custom/fcitx5-lang",
+        "bluetooth",
+        "network",
+        "wireplumber",
+        "custom/battery",
+        // "battery",
+        "clock"
+    ],
+    
+    // left modules
+    "custom/seperator": {
+        "format": " "
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三", 
+            "4": "四", 
+            "5": "五",
+	        "6": "六",
+	        "7": "七",
+	        "8": "八",
+	        "9": "九",
+            "10": "十"
+        },
+        "persistent-workspaces":
+        {
+	    "DP-1": [1,2,3,4,5,6,7,8,9,10], 
+            "DP-3": [1,2,3,4,5,6,7,8,9,10], 
+            "DP-2": [1,2,3,4,5,6,7,8,9,10],
+            "DP-3": [1,2,3,4,5,6,7,8,9,10],
+            "DP-4": [1,2,3,4,5,6,7,8,9,10],
+            "eDP-1": [1,2,3,4,5,6,7,8,9,10],
+            "HDMI-A-2": [1,2,3,4,5,6,7,8,9,10]
+        }
+    },
+    "hyprland/window": {
+        "format": "  {}",
+        "max-length": 40
+    },
+    "mpris": {
+        "interval": 1,
+        "format": "󰝚  {title}-{artist}",
+        "format-paused": "󰝛  {title}-{artist}",
+        "on-click": "playerctl previous",
+        "on-click-middle": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "scroll-step": 5.0,
+        "smooth-scrolling-threshold": 1,
+        "status-icons": {
+        "paused": "󰐎",
+        "playing": "󰝚",
+        "stopped": ""
+    	},
+	    "max-length": 50
+    },
+
+    // center modules
+
+
+    // right modules
+    "custom/fcitx5-lang": {
+        "exec": "~/.config/waybar/scripts/fcitx5-lang.sh",
+        "interval": 1,
+        "format": "lang:{}",
+        "tooltip": false
+    },
+    "bluetooth": {
+	    "format-disabled": "bt:off",
+        "format-on": "bt:on",
+	    "format-connected": "dev:{device_alias}",
+	    "tooltip-format": "status:{status}",
+	    "tooltip-format-connected": "decive connected:{device_alias}",
+            "on-click":"sh -c 'kitty --class bluetui -e bluetui'",
+	    "interval": 1,
+        "max-length": 20
+    },
+    "network": {
+        "format-wifi": "net:{essid}",
+        "format-disconnected": "net:off",
+        /*"on-click": "sh ~/.config/waybar/scripts/wifi_floating.sh",*/
+        "on-click": "sh -c 'kitty --class nmtui -e nmtui'",
+	    "tooltip-format": "{essid}",
+        "max-length": 25
+    },
+    "wireplumber": {
+        "format": "vol:{volume}%",
+        "format-muted": "muted", 
+        "format-icons": {
+            "default": [" ", " ", " "]
+        },
+        "on-click-right": "org.pulseaudio.pavucontrol",
+	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "clock": {
+        "interval": 1,
+        "timezone": "US/Central",
+        "format": "{:%a %d/%m | %T}",
+        "tooltip-format": "<span><tt>{calendar}</tt></span>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "format": {
+                "months": "<span color='#504945'><b>{}</b></span>",
+                "days": "<span color='#ebdbb2'><b>{}</b></span>",
+                "weeks": "<span color='#928374'><b>W{}</b></span>",
+                "weekdays": "<span color='#7c6f64'><b>{}</b></span>",
+                "today": "<span color='#d79921'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "battery": {
+	    "bat": "DisplayDevice",
+        "states": {
+            "good": 90,
+            "warning": 20,
+            "critical": 15
+        },
+        "format": "battery:{capacity}%",
+        "format-full": "full:{capacity}%",
+        "format-charging": "charging:{capacity}%",
+        "format-plugged": "plugged:{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "custom/battery": {
+        "exec": "/home/keys/.config/waybar/scripts/battery.sh",
+        "interval": 15,
+        "return-type": "json",
+        "format": "{text}",
+        "format-full": "full:{capacity}%",
+        "format-charging": "charging:{capacity}%",
+        "format-plugged": "plugged:{capacity}%",
+        "format-icons": ["","","","",""]
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "ENG",
+        "format-jp": "JP",
+        "keyboard-name": "at-translated-set-2-keyboard" 
+    },
+
+
+    // unused
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/rofi/menu/powermenu.sh"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 2",
+        "on-scroll-down": "pamixer -d 2",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%  ",
+        "tooltip": false,
+        "format-source-muted": " Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 2",
+        "on-scroll-down": "pamixer --default-source -d 2",
+        "scroll-step": 5
+    },
+    "cava": {
+        "framerate": 40,
+        "autosens": 0,
+        "sensitivity": 38,
+        "bars": 18,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 12000,
+        "method": "pulse",
+        "hide_on_silence": false,
+        "sleep_timer": 5,
+        "source": "auto",
+        "stereo": false,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 0,
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
+    },
+    "tray": {
+        "icon-size": 12,
+        "spacing": 10
+    },
+    "input-method": {
+        "format": "{shortname}",
+        "tooltip": false
+    }
+}

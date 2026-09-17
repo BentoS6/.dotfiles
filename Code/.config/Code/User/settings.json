@@ -1,0 +1,88 @@
+{ "workbench.colorTheme": "Gruvbox Dark Medium",
+    "makefile.configureOnOpen": true,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editor.enablePreview": false,
+    "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "editor.minimap.enabled": false,
+
+    // Vim
+    "vim.hlsearch": true,
+    // leader key
+    "vim.leader": "<space>",
+    // system clipboard
+    "vim.useSystemClipboard": true,
+    // insert mode keybindings
+    "vim.insertModeKeyBindings": [
+      { "before": ["j", "j"], "after": ["<Esc>"] }
+    ],
+    // normal mode keybindings
+    "vim.normalModeKeyBindingsNonRecursive": [
+      // COMMAND LINE
+      // semicolon opens command line, comma repeats f/t forward
+      { "before": [";"], "after": [":"] },
+      { "before": [","], "after": [";"] },
+
+      // CUT VS DELETE
+      // d/c destroy (black hole), x cuts to register
+      { "before": ["d"], "after": ["\"", "_", "d"] },
+      { "before": ["<S-d>"], "after": ["\"", "_", "<S-d>"] },
+      { "before": ["c"], "after": ["\"", "_", "c"] },
+      { "before": ["<S-c>"], "after": ["\"", "_", "<S-c>"] },
+      { "before": ["x"], "after": ["d"] },
+      { "before": ["<S-x>"], "after": ["<S-d>"] },
+
+      // NAVIGATION
+      // switch b/w buffers
+      { "before": ["<S-h>"], "commands": [":bprevious"] },
+      { "before": ["<S-l>"], "commands": [":bnext"] },
+      // splits
+      { "before": ["leader", "v"], "commands": [":vsplit"] },
+      // close split
+      {
+        "before": ["leader", "q"],
+        "commands": ["workbench.action.closeEditorsAndGroup"]
+      },
+      // splits navigation
+      {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+      },
+      {
+        "before": ["leader", "j"],
+        "commands": ["workbench.action.focusBelowGroup"]
+      },
+      {
+        "before": ["leader", "k"],
+        "commands": ["workbench.action.focusAboveGroup"]
+      },
+      {
+        "before": ["leader", "l"],
+        "commands": ["workbench.action.focusRightGroup"]
+      }
+    ],
+    // visual mode keybindings
+    "vim.visualModeKeyBindingsNonRecursive": [
+      { "before": [";"], "after": [":"] },
+      { "before": [","], "after": [";"] },
+      { "before": ["d"], "after": ["\"", "_", "d"] },
+      { "before": ["c"], "after": ["\"", "_", "c"] },
+      { "before": ["x"], "after": ["d"] },
+      // paste over selection without clobbering the register
+      { "before": ["p"], "after": ["\"", "_", "d", "<S-p>"] }
+    ],
+    "vim.statusBarColors.insert": "#333333",
+    "vim.statusBarColors.normal": "#282922",
+    "claudeCode.preferredLocation": "panel",
+    // mouse and scrolling
+    "editor.smoothScrolling": true,
+    "editor.mouseWheelScrollSensitivity": 1, 
+    "claudeCode.useTerminal": true,
+    "workbench.sideBar.location": "right",
+    "security.workspace.trust.untrustedFiles": "open"
+}
