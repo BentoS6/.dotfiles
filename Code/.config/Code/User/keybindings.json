@@ -29,12 +29,23 @@
   // sidebar visibility
   {
     "command": "workbench.action.toggleSidebarVisibility",
-    "key": "ctrl+e"
+    "key": "ctrl+b"
   },
   {
     "command": "workbench.files.action.focusFilesExplorer",
-    "key": "ctrl+e",
+    "key": "ctrl+b",
     "when": "editorTextFocus"
+  },
+  // toggle extensions
+  {
+    "key": "ctrl+e",
+    "command": "workbench.view.extensions",
+    "when": "!sideBarVisible || activeViewlet != 'workbench.view.extensions'"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarVisible && activeViewlet == 'workbench.view.extensions'"
   },
   // new file
   {
@@ -96,5 +107,15 @@
   {
     "key": "ctrl+9",
     "command": "workbench.action.openEditorAtIndex9"
+  },
+  // close active tab
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  // new untitled tab
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.files.newUntitledFile"
   }
 ]
