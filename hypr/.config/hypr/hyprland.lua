@@ -104,6 +104,22 @@ hl.window_rule({
     no_focus = true,
 })
 
+hl.window_rule({
+    name   = "nmtui-float",
+    match  = { class = "^(nmtui-float)$" },
+    float  = true,
+    center = true,
+    size   = "900 600",
+})
+
+hl.window_rule({
+    name   = "bluetui-float",
+    match  = { class = "^(bluetui-float)$" },
+    float  = true,
+    center = true,
+    size   = "900 600",
+})
+
 --------------------------------------------------------------------------------
 --  Look and feel
 --------------------------------------------------------------------------------
@@ -227,6 +243,8 @@ hl.bind(mainMod .. " + A",     hl.dsp.exec_cmd(anki))
 hl.bind(mainMod .. " + T",     hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind("XF86Bluetooth",       hl.dsp.exec_cmd("blueman-manager"))
+hl.bind("SUPER + N", hl.dsp.exec_cmd("kitty --class nmtui-float -e nmtui"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("kitty --class bluetui-float -e bluetui"))
 
 -- Window management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
