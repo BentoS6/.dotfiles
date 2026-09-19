@@ -26,15 +26,16 @@
   },
   // sidebar
 
-  // sidebar visibility
+  // toggle file explorer
   {
-    "command": "workbench.action.toggleSidebarVisibility",
-    "key": "ctrl+b"
+    "key": "ctrl+b",
+    "command": "workbench.view.explorer",
+    "when": "!sideBarVisible || activeViewlet != 'workbench.view.explorer'"
   },
   {
-    "command": "workbench.files.action.focusFilesExplorer",
     "key": "ctrl+b",
-    "when": "editorTextFocus"
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'"
   },
   // toggle extensions
   {
