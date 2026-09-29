@@ -4,8 +4,11 @@
 --  Monitors
 --------------------------------------------------------------------------------
 
-hl.monitor({ output = "eDP-1", mode = "2560x1600@165", position = "0x0", scale = "1.3333" })
+hl.monitor({ output = "eDP-1",    mode = "2560x1600@165", position = "0x0",    scale = "1.3333" })
+hl.monitor({ output = "HDMI-A-1", mode = "2560x1440@120", position = "1920x0", scale = "1" })
 
+-- fallback for anything else you plug in
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
 --------------------------------------------------------------------------------
 --  Programs
 --------------------------------------------------------------------------------
@@ -34,6 +37,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("blueman-applet")
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd(scripts .. "/internship_daily.sh")
+--     hl.exec_cmd("otd-daemon")
 end)
 
 --------------------------------------------------------------------------------
