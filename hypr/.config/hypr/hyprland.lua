@@ -3,8 +3,9 @@
 --------------------------------------------------------------------------------
 --  Monitors
 --------------------------------------------------------------------------------
-
-hl.monitor({ output = "eDP-1",    mode = "2560x1600@165", position = "0x0",    scale = "1.3333" })
+-- laptop
+hl.monitor({ output = "eDP-1", mode = "2560x1600@120", position = "0x0",    scale = "1.3333" })
+-- monitor
 hl.monitor({ output = "HDMI-A-1", mode = "2560x1440@120", position = "1920x0", scale = "1" })
 
 -- fallback for anything else you plug in
