@@ -4,9 +4,9 @@
 --  Monitors
 --------------------------------------------------------------------------------
 -- laptop
-hl.monitor({ output = "eDP-1", mode = "2560x1600@120", position = "0x0",    scale = "1.3333" })
+hl.monitor({ output = "eDP-1", mode = "2560x1600@165", position = "0x0",    scale = "1.3333" })
 -- monitor
-hl.monitor({ output = "HDMI-A-1", mode = "2560x1440@120", position = "1920x0", scale = "1" })
+hl.monitor({ output = "DP-1", mode = "2560x1440@239.97", position = "1920x0", scale = "1" })
 
 -- fallback for anything else you plug in
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
@@ -253,7 +253,7 @@ hl.bind("SUPER + B", hl.dsp.exec_cmd("kitty --class bluetui-float -e bluetui"))
 
 -- Window management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exit())
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("mousepad"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))                   -- moved off J (hjkl focus)
 hl.bind(mainMod .. " + SHIFT + semicolon", hl.dsp.exec_cmd("hyprlock"))    -- moved off L (hjkl focus)
