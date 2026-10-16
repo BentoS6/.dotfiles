@@ -195,5 +195,8 @@
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.startupEditor": "none",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "editor.wordWrap": "on"
+  "editor.wordWrap": "on",
+  // markdown preview: sync scroll between source and preview
+  "markdown.preview.scrollPreviewWithEditor": true,
+  "markdown.preview.scrollEditorWithPreview": true
 }

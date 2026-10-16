@@ -3,10 +3,10 @@
 --------------------------------------------------------------------------------
 --  Monitors
 --------------------------------------------------------------------------------
--- laptop
-hl.monitor({ output = "eDP-1", mode = "2560x1600@165", position = "0x0",    scale = "1.3333" })
 -- monitor
-hl.monitor({ output = "DP-1", mode = "2560x1440@239.97", position = "1920x0", scale = "1" })
+hl.monitor({ output = "DP-1", mode = "2560x1440@239.97", position = "0x0",    scale = "1" })
+-- laptop
+hl.monitor({ output = "eDP-1", mode = "2560x1600@165", position = "2560x0", scale = "1.3333" })
 
 -- fallback for anything else you plug in
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
@@ -243,7 +243,7 @@ hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprlock --immediate"), { lock
 -- Apps
 hl.bind(mainMod .. " + F",     hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + E",     hl.dsp.exec_cmd(browser))
-hl.bind("CTRL + SHIFT + P",    hl.dsp.exec_cmd(browser .. " -private-window"))
+-- hl.bind("CTRL + SHIFT + P",    hl.dsp.exec_cmd(browser .. " -private-window"))
 hl.bind(mainMod .. " + A",     hl.dsp.exec_cmd(anki))
 hl.bind(mainMod .. " + T",     hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
